@@ -1,16 +1,25 @@
+import React from "react";
 import "./App.css";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 import reducers from "./reducers";
+// import new components
+import NewTimer from "./components/NewTimer";
+import ListTimers from "./ListTimers";
+
+const store = createStore(reducers);
 
 function App() {
-  const store = createStore(reducers);
   return (
-    <div className="App">
-      <Provider store={store}>
+    <Provider store={store}>
+      <div className="App">
+        {" "}
         <h1>TMRZ</h1>
-      </Provider>
-    </div>
+        {/* Display the new components */}
+        <NewTimer />
+        <ListTimers />
+      </div>
+    </Provider>
   );
 }
 
